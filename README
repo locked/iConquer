@@ -13,3 +13,54 @@ You'll need django (1.1, best with 1.2) and twisted
 For django, the only requirement is the registration plugin. 
 
 To start the game, Setup your database, change the appropriate config in settings.py and run ./start_server
+
+== Apache configuration ==
+
+The game require special tricks, here is my working Virtual Host from which you can start:
+
+<VirtualHost *:80>
+        ServerName iconquer.lunasys.fr
+        UseCanonicalName Off
+        DocumentRoot /data/hosting/iconquer
+        WSGIScriptAlias /game /data/hosting/iconquer/wsgi_handler.py
+
+        RewriteEngine on
+        RewriteRule   ^/$  /game/  [R]
+
+	# All PUSH request
+        ProxyPass /push/ http://localhost:8080/ keepalive=Off
+        <Location /push/>
+        SetEnv force-proxy-request-1.0 1
+        SetEnv proxy-nokeepalive 1
+        </Location>
+
+	# All direct access to the running server
+        ProxyPass /srv/ http://localhost:8081/ keepalive=Off timeout=2 retry=0
+        <Location /srv/>
+        SetEnv force-proxy-request-1.0 1
+        SetEnv proxy-nokeepalive 1
+        </Location>
+
+        ProxyRequests Off
+        <Proxy *>
+        Order deny,allow
+        Allow from all
+        </Proxy>
+
+        Alias /static/ /data/hosting/iconquer/static/
+        <Location "/static">
+                SetHandler None
+        </Location>
+        Alias /media/ /usr/lib/python2.5/site-packages/Django-1.1.1-py2.5.egg/django/contrib/admin/media/
+        <Location "/media-admin">
+                SetHandler None
+        </Location>
+        <LocationMatch "http*">
+                SetHandler None
+                Order Deny,Allow
+                Deny from all
+        </LocationMatch>
+        ErrorLog /var/log/apache2/iconquer-error.log
+        CustomLog /var/log/apache2/iconquer-access.log combined
+</VirtualHost>
+
