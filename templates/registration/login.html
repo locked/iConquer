@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div id="contents">
+
+{% if form.errors %}
+    <div class="errors">
+        <p>Error while submitting form</p>
+    </div>
+    <br>
+{% endif %}
+
+<br>
+<h2>C&C gameplay adapted for MMORPG, full HTML5</h2>
+<p>(Warning: this is mainly an experimental game aimed at testing new HTML5 features, please don't mind the debug stuff)</p>
+<div style="margin:auto;width:560px;">
+<img src="/static/iconquer1.png" width="250" style="margin:28px 10px 10px 10px;border:1px solid gray;padding:4px;float:left;"/>
+<img src="/static/iconquer2.png" width="250" style="margin:10px 10px 10px 10px;border:1px solid gray;padding:4px;float:left;"/>
+</div>
+<div class="break">
+</div>
+
+<form action="" method="post">
+{% csrf_token %}
+    <fieldset>
+	    <legend>{% trans "Sign In" %}</legend>
+	    <table>
+		    {{ form.as_table }}
+	    </table>
+	    <p><input type="submit" name="bsignup'" value="{% trans "Sign up" %}">&nbsp;&nbsp;<a href="{% url registration_register %}">register here</a></p>
+	 </fieldset>
+</form>
+
+</div>
+{% endblock %}

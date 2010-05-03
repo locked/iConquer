@@ -1,0 +1,7 @@
+{% load i18n %}
+
+Bonjour,
+
+Merci pour votre inscription sur iconquer.fastprod.com, pour activer votre compte, veuillez cliquer sur le lien ci dessous :
+
+<a href="http://iconquer.fastprod.com{% url registration_activate activation_key %}">{% trans "Click here to activate" %}</a>.
