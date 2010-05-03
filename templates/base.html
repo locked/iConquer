@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<link rel="stylesheet" href="/static/base.css" type="text/css" media="screen" title="" />
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/jquery.layout.js"></script>
+<script>
+function debug( txt ) {
+	// Do nothing
+}
+</script>
+{% block head %}
+{% endblock %}
+</head>
+<body>
+<div id="contents_main">
+<div id="header"></div>
+{% block content %}
+{% endblock %}
+</div>
+<div id="footer">Online redalert by locked - <a href="javascript:music.pause();">stop music</a></div>
+</body>
+</html>

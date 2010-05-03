@@ -1,0 +1,237 @@
+body, textarea {
+    background:#222;
+    margin: 0;
+    font-family: Arial;
+    font-size: 0.8em;
+	color:#eee;
+}
+
+a img {
+	border:0px;
+}
+a, a:visited {
+	color:#34d;
+}
+
+.break { clear:both; }
+.left { float:left; }
+
+
+.ui-layout-resizer, .ui-layout-toggler {
+	margin:3px;
+	padding:3px;
+	background-color:#333;
+}
+.ui-layout-pane p {
+	color:#fff;
+}
+.ui-layout-pane {
+	background-color:black !important;
+}
+.ui-layout-pane h2 {
+	font-size:1.1em;
+	margin:0px;
+	color:#fff;
+}
+.ui-layout-north {
+	/*padding:3px !important;*/
+	/*padding-top:1px !important;*/
+}
+.ui-layout-west {
+}
+
+.ui-layout-center {
+	/*position:relative;*/
+	overflow:hidden !important;
+}
+
+#ground {
+	/*background:url(earth-map-big.jpg);*/
+	width:3200px;
+	height:1600px;
+}
+
+.block {
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    position: absolute;
+    background:#eee;
+    padding:0px;
+    border-collapse:collapse;
+}
+
+.handle {
+    display:block;
+    cursor:move;
+}
+
+.grd {
+	float:left;
+	width:24px;
+	height:24px;
+	margin:0px;
+}
+
+.obj {
+	position:absolute;
+	width:24px;
+	height:24px;
+	margin:0px;
+}
+.obj_sel {
+	border:1px solid red;
+	margin:-1px;
+}
+.obj_hover {
+	border:1px solid green;
+	margin:-1px;
+}
+
+/* Ground
+.grd0 { background:url('graphics/grd.png'); }
+.grd0_1 { background:url('graphics/grd.png'); }
+.grd0_2 { background:url('graphics/grd2.png'); }
+.grd0_3 { background:url('graphics/grd3.png'); }
+.grdb { background:url('graphics/grdb.png'); }
+.grdb2 { background:url('graphics/grdb2.png'); }
+
+.grd3 { background:url('graphics/wallh.png'); }
+.grd2 { background:url('graphics/wallv.png'); }
+.grd6 { background:url('graphics/wallvt.png'); }
+.grd7 { background:url('graphics/wallvb.png'); }
+.grd5 { background:url('graphics/wallhl.png'); }
+.grd4 { background:url('graphics/wallhr.png'); }
+.grd8 { background:url('graphics/wallctl.png'); }
+
+.waterv { background:url('graphics/waterv.png'); }
+
+.grd20 { background:url('graphics/spice.png'); }
+*/
+
+.sel {
+	float:left;
+	width:40px;
+	height:40px;
+	margin:2px;
+}
+.sel_soldier { background:url('graphics/objs/btn/soldier.png'); }
+.sel_jeep { background:url('graphics/objs/btn/jeep.png'); }
+.sel_plant { background:url('graphics/objs/btn/plant.png'); }
+.sel_refinery { background:url('graphics/objs/btn/refinery.png'); }
+
+.action {
+	float:left;
+	width:64px;
+	height:48px;
+	margin:2px;
+}
+a.action:hover {
+	margin:0px;
+	border:2px solid gray;
+}
+.action_attack { background:url('graphics/actions.png') no-repeat; background-position:0px 0px; }
+.action_move { background:url('graphics/actions.png') no-repeat; background-position:-64px 0px; }
+
+
+.global_action {
+	width:30px;
+	height:24px;
+	background:url('graphics/sprites.png') no-repeat;
+	float:left;
+}
+.global_action_sell {
+	background-position:-30px 0px;
+}
+.global_action_repair {
+	background-position:0px 0px;
+}
+.global_action:hover {
+	border:1px solid #DDD;
+}
+
+
+#status, #gameinfo, #chat {
+	width:31%;
+	height:190px;
+	border:1px solid #222;
+	padding:2px;
+	margin:0px 9px 0px 0px;
+	float:left;
+}
+
+#map, #global_actions, #actions, #sel, #debug, #log, #animations, #properties {
+	width:160px;
+	height:auto;
+	min-height:44px;
+	border:1px solid gray;
+	padding:2px;
+	margin:1px 0px 2px 0px;
+}
+
+#sel p {
+	float:left;
+}
+#animations, #log, #sel {
+	height:auto;
+	width:154px;
+}
+#map {
+	height:120px;
+}
+
+
+#actions, #log {
+	width:99%;
+	height:168px;
+	overflow:auto;
+}
+#log {
+	font-size:0.7em;
+}
+
+
+.map_pt, .map_pt_jeep, .map_pt_soldier {
+	position:relative;
+	width:2px;
+	height:2px;
+	margin:0px;
+}
+.map_pt_soldier {
+	background-color:red;
+}
+.map_pt_jeep {
+	background-color:orange;
+}
+
+#resources {
+	float:right;
+}
+
+#energy_bar, #money_bar {
+	position:relative;
+	height:16px;
+	width:140px;
+	padding:1px;
+	margin:0px 2px 0px 2px;
+	border:1px solid gray;
+	float:left;
+}
+.energy_bar_label, .money_bar_label {
+	position:relative;
+	top:-16px;
+	left:0px;
+	height:16px;
+	width:140px;
+	text-align:center;
+}
+.energy_bar_inner, .money_bar_inner {
+	position:relative;
+	top:0px;
+	left:0px;
+	height:16px;
+	width:0px;
+	background:#DD2222;
+}
+.money_bar_inner {
+	background:#22DD22;
+}

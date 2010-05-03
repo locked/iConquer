@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head %}
+<script src="/static/js/audio.js"></script>
+<script>
+var music = getAudioElement( "music/hell226m.ogg" );
+music.addEventListener("canplay", function() {
+	this.play();
+}, true);
+realAudioLoad();
+</script>
+{% endblock %}
+
+
+{% block content %}
+
+<p>PLAYER: {{ user.get_profile.name }} (level:{{user.get_profile.level}}) (<a href="{% url auth_logout %}">logout</a>)</p>
+
+<div id="contents">
+<p>Your Games:</p>
+<ul>
+{% for g in games %}
+<li><a href="/game/{{g.id}}">Game {{ g }}</a></li>
+{% endfor %}
+</ul>
+
+<p>Available Games:</p>
+<ul>
+{% for g in agames %}
+<li><a href="/srv/{{g.id}}/{{user.get_profile.id}}/join">Game {{ g }}</a></li>
+{% endfor %}
+</ul>
+</div>
+
+{% endblock %}
