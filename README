@@ -1,6 +1,15 @@
-iConquer is an attempt at creating an online C&C
+== What is iConquer ==
 
-This is more a proof of concept and a field of experimentation than an actual, functional, clone, but I encourage any enthousiast to participate to this projject.
+iConquer is an attempt at creating an online C&C. While this is more a proof of concept and a field of experimentation than an actual, functional, clone, it is usable and I encourage any enthousiast to participate to this project.
 
 It is based on Django and Twisted
 
+== Installation notes ==
+
+Sprites/Images: Because the sprites are taken from C&C, you need to extract them by yourself, or contact me directly to get them. The scripts to generate them is in scripts/ but it is not really user friendly.. Free sprites are welcome :)
+
+You'll need django (1.1, best with 1.2) and twisted
+
+For django, the only requirement is the registration plugin. 
+
+To start the game, Setup your database, change the appropriate config in settings.py and run ./start_server
