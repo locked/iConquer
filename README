@@ -1,0 +1,6 @@
+iConquer is an attempt at creating an online C&C
+
+This is more a proof of concept and a field of experimentation than an actual, functional, clone, but I encourage any enthousiast to participate to this projject.
+
+It is based on Django and Twisted
+
