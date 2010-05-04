@@ -1,5 +1,4 @@
 export PATH=.:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
-#export PYTHONPATH=/usr/local/lib/python2.6/dist-packages
 export DJANGO_SETTINGS_MODULE=settings
 export LC_ALL=C
 
